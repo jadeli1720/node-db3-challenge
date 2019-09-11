@@ -55,7 +55,10 @@ function update() {
 
 };
 
-function remove() {
-
+function remove(id) {
+    //delete from schemes where...
+    return db('schemes')
+        .where('id', id)
+        .del()
 }
 
