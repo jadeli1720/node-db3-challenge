@@ -29,21 +29,26 @@ function findSteps(id) {
     join Scheme as sc on sc.id = st.scheme_id
     where st.id = id
     */
-   return db('steps as st')
-            .join('schemes as sc', 'sc.id', 'st.scheme_id')
-            .select(
-                'st.id', 
-                'sc.scheme_name', 
-                'st.step_number',
-                'st.instructions'
-                )
-            .where({"sc.id": id})
+    return db('steps as st')
+        .join('schemes as sc', 'sc.id', 'st.scheme_id')
+        .select(
+            'st.id',
+            'sc.scheme_name',
+            'st.step_number',
+            'st.instructions'
+        )
+        .where({ "sc.id": id })
 
 };
 
 
-function add() {
-
+function add(scheme) {
+    //insert into schemes() values()
+    return db('schemes')
+        .insert(scheme)
+        .then(ids => {
+            return findById(ids[0])
+        })
 };
 
 function update() {
