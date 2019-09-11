@@ -51,8 +51,11 @@ function add(scheme) {
         })
 };
 
-function update() {
-
+function update(changes,id) {
+    //update  schemes set  where id = 123
+    return db('schemes')
+        .where({id})
+        .update(changes)
 };
 
 function remove(id) {
