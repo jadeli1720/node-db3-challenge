@@ -14,7 +14,7 @@ module.exports = {
     seeds: {
       directory: './data/seeds'
     },
-    // add the following
+    // needed when using foreign keys
     pool: {
       afterCreate: (conn, done) => {
         // runs after a connection is made to the sqlite engine

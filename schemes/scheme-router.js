@@ -32,7 +32,7 @@ router.get('/:id', (req, res) => {
 
 router.get('/:id/steps', (req, res) => {
   const { id } = req.params;
-
+console.log({id})
   Schemes.findSteps(id)
   .then(steps => {
     if (steps.length) {
